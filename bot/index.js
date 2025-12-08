@@ -58,7 +58,7 @@ client.on('messageCreate', message => {
         return;
     }
     if ((message.content.toLowerCase()) == "porque hace frio?"){
-        message.reply("Ni idea resale a diosito")
+        message.reply("Ni idea resale a diosito y métele pinga a the game")
     }
 });
 
