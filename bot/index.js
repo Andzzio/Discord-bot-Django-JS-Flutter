@@ -65,6 +65,8 @@ client.on('messageCreate', message => {
                 message.reply(`A ${message.author.username} le mide ${random} cm, rico?`)
             } if (random >= 10 && random < 30){
                 message.reply(`A ${message.author.username} le mide ${random} cm 🫢`)
+            } if (random === 30){
+                message.reply(`A ${message.author.username} le mide ${random} cm, joder 😭`)
             }
         }
     }
