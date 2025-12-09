@@ -98,4 +98,13 @@ client.on('messageCreate', message => {
     }
 });
 
+client.on('messageCreate', message => {
+    if (message.author.bot){
+        return;
+    }
+    if ((message.content.toLowerCase()) == "sabes que es dotenv?"){
+        message.reply("Ni idea, pero me da asco")
+    }
+});
+
 client.login(token);
