@@ -48,7 +48,7 @@ client.on('messageCreate', message => {
             message.reply("Porque me odia 😭");
         } else if (command ===  'sabes que es dotenv?') {
             message.reply("Ni idea, pero me da asco");
-        } else if (command === 'Ante todo muy buenas noches') {
+        } else if (command === 'ante todo muy buenas noches') {
             message.reply("Primero la educacion araraara nya ay papi siiiii 💋");
         }
     }
