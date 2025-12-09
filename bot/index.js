@@ -59,7 +59,13 @@ client.on('messageCreate', message => {
             const min = 0;
             const max = 30;
             const random = Math.floor(Math.random() * (max - min + 1)) + min;
-            message.reply(`A ${message.author.username} le mide ${random} cm`)
+            if (random === 0){
+                message.reply(`Mi estimado ${message.author.username} tiene pene?`)
+            } if (random > 0 && random < 10){
+                message.reply(`A ${message.author.username} le mide ${random} cm, rico?`)
+            } if (random >= 10 && random < 30){
+                message.reply(`A ${message.author.username} le mide ${random} cm 🫢`)
+            }
         }
     }
 });
