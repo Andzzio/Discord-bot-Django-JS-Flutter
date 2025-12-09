@@ -1,9 +1,17 @@
 import 'package:bot_dasboard_app/widget/field_widget.dart';
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  final TextEditingController messageController = TextEditingController();
+  final TextEditingController channelController = TextEditingController();
+  final TextEditingController tokenController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -16,7 +24,11 @@ class MainScreen extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.only(right: 30),
               width: 400,
-              child: FieldWidget(hintText: "Token API"),
+              child: FieldWidget(
+                controller: tokenController,
+                hintText: "Token API",
+                onSubmitted: (value) {},
+              ),
             ),
           ),
         ],
@@ -42,11 +54,19 @@ class MainScreen extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: FieldWidget(hintText: "Write your Message"),
+                      child: FieldWidget(
+                        controller: messageController,
+                        hintText: "Write your Message",
+                        onSubmitted: (value) {
+                          messageController.clear();
+                        },
+                      ),
                     ),
                     SizedBox(width: 20),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        messageController.clear();
+                      },
                       icon: Icon(Icons.send_rounded),
                       color: Color(0xFF44474C),
                       hoverColor: Color.fromARGB(255, 107, 112, 119),
@@ -55,7 +75,11 @@ class MainScreen extends StatelessWidget {
                   ],
                 ),
                 Spacer(),
-                FieldWidget(hintText: "Channel ID"),
+                FieldWidget(
+                  controller: channelController,
+                  hintText: "Channel ID",
+                  onSubmitted: (value) {},
+                ),
               ],
             ),
           ),
