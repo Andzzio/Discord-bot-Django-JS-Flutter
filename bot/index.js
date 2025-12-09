@@ -3,6 +3,7 @@ const { Client, GatewayIntentBits } = require("discord.js");
 require("dotenv").config({ path: '../.env' });
 const token = process.env.DISCORD_TOKEN;
 
+const prefix = "!";
 
 const client = new Discord.Client({
     intents : [
@@ -18,92 +19,36 @@ client.on("ready", () => {
 });
 
 client.on('messageCreate', message => {
-    if (message.author.bot){
+    if (message.author.bot) {
         return;
     } 
-    if ((message.content.toLowerCase()) == 'ping'){
-        message.reply('pong');
-    }
-}); 
+    
+    const content = message.content.toLowerCase();
 
-client.on('messageCreate', message =>{
-    if (message.author.bot){
-        return;
-    }
-    if ((message.content.toLowerCase()) == "quieres sexo?"){
-        message.reply("Soy timido 😶‍🌫️")
-    }
-});
+    if (content.startsWith(prefix)) {
+        const command = content.slice(prefix.length).trim();
 
-client.on('messageCreate', message =>{
-    if (message.author.bot){
-        return;
-    }
-    if ((message.content.toLowerCase()) == "hola"){
-        message.reply("Hola, ¿en qué puedo ayudarte?")
-    }
-});
-
-client.on('messageCreate', message =>{
-    if (message.author.bot){
-        return;
-    }
-    if ((message.content.toLowerCase()) == "maulla es pepa?"){
-        message.reply("Si es pepa,pero amedia")
-    }
-});
-
-client.on('messageCreate', message => {
-    if (message.author.bot){
-        return;
-    }
-    if ((message.content.toLowerCase()) == "chino es feo?"){
-        message.reply("Asumare todavia preguntas me da asco solo ver que hasta su nombre programaste en el vscode aggggg")
-    }
-});
-
-client.on('messageCreate', message => {
-    if (message.author.bot){
-        return;
-    }
-    if ((message.content.toLowerCase()) == "porque hace frio?"){
-        message.reply("Ni idea resale a diosito y métele pinga a the game")
-    }
-});
-
-client.on('messageCreate', message => {
-    if (message.author.bot){
-        return;
-    }
-    if ((message.content.toLowerCase()) == "porque huele el aire a pollo muerto?"){
-        message.reply("Porque hueles a caca p ctmr")
-    }
-});
-
-client.on('messageCreate', message => {
-    if (message.author.bot){
-        return;
-    }
-    if ((message.content.toLowerCase()) == "que dia es navidad?"){
-        message.reply("Navidad es el dia 25 de diciembre")
-    }
-});
-
-client.on('messageCreate', message => {
-    if (message.author.bot){
-        return;
-    }
-    if ((message.content.toLowerCase()) == "porque maulla ya no te habla?"){
-        message.reply("Porque me odia 😭")
-    }
-});
-
-client.on('messageCreate', message => {
-    if (message.author.bot){
-        return;
-    }
-    if ((message.content.toLowerCase()) == "sabes que es dotenv?"){
-        message.reply("Ni idea, pero me da asco")
+        if (command === 'ping') {
+            message.reply('pong');
+        } else if (command === 'quieres sexo?') {
+            message.reply("Soy timido 😶‍🌫️");
+        } else if (command === 'hola') {
+            message.reply("Hola, ¿en qué puedo ayudarte?");
+        } else if (command === 'maulla es pepa?') {
+            message.reply("Si es pepa, pero a media");
+        } else if (command === 'chino es feo?') {
+            message.reply("Asumare todavia preguntas me da asco solo ver que hasta su nombre programaste en el vscode aggggg");
+        } else if (command === 'porque hace frio?') {
+            message.reply("Ni idea resale a diosito y métele pinga a the game");
+        } else if (command === 'porque huele el aire a pollo muerto?') {
+            message.reply("Porque hueles a caca p ctmr");
+        } else if (command === 'que dia es navidad?') {
+            message.reply("Navidad es el dia 25 de diciembre");
+        } else if (command === 'porque maulla ya no te habla?') {
+            message.reply("Porque me odia 😭");
+        } else if (command === 'sabes que es dotenv?') {
+            message.reply("Ni idea, pero me da asco");
+        }
     }
 });
 
