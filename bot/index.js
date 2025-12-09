@@ -50,6 +50,8 @@ client.on('messageCreate', message => {
             message.reply("Ni idea, pero me da asco");
         } else if (command === 'ante todo muy buenas noches') {
             message.reply("Primero la educacion araraara nya ay papi siiiii 💋");
+        } else if (command === 'peneseñal') {
+            message.reply("montapuerco griando 'hogrider'");
         }
     }
 });
