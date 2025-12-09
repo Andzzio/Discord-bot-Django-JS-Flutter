@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { Client, GatewayIntentBits } = require("discord.js");
-require("dotenv").config();
+require("dotenv").config({ path: '../.env' });
 const token = process.env.DISCORD_TOKEN;
 
 
@@ -32,6 +32,15 @@ client.on('messageCreate', message =>{
     }
     if ((message.content.toLowerCase()) == "quieres sexo?"){
         message.reply("Soy timido 😶‍🌫️")
+    }
+});
+
+client.on('messageCreate', message =>{
+    if (message.author.bot){
+        return;
+    }
+    if ((message.content.toLowerCase()) == "hola"){
+        message.reply("Hola, ¿en qué puedo ayudarte?")
     }
 });
 
@@ -77,6 +86,15 @@ client.on('messageCreate', message => {
     }
     if ((message.content.toLowerCase()) == "que dia es navidad?"){
         message.reply("Navidad es el dia 25 de diciembre")
+    }
+});
+
+client.on('messageCreate', message => {
+    if (message.author.bot){
+        return;
+    }
+    if ((message.content.toLowerCase()) == "porque maulla ya no te habla?"){
+        message.reply("Porque me odia 😭")
     }
 });
 

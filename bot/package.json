@@ -1,14 +1,4 @@
 {
-  "name": "pene-bot",
-  "version": "1.0.0",
-  "description": "Un bot",
-  "license": "ISC",
-  "author": ".eduop",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
     "discord.js": "^14.25.1",
     "dotenv": "^17.2.3"
