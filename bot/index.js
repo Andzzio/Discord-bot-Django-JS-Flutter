@@ -55,6 +55,11 @@ client.on('messageCreate', message => {
                 content: "@everyone PENEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",
                 files : ["https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjc1cTdlYnkxYndudXpucTZnbnYwY3piaTI5bTl3ZTN6c3dqOWR5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8YzUAmC06M4A7HaBQg/giphy.gif"]
             })
+        } else if (command === 'me mide'){
+            const min = 0;
+            const max = 30;
+            const random = Math.floor(Math.random() * (max - min + 1)) + min;
+            message.reply(`A ${message.author.username} le mide ${random} cm`)
         }
     }
 });
