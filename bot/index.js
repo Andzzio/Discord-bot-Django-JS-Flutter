@@ -51,7 +51,10 @@ client.on('messageCreate', message => {
         } else if (command === 'ante todo muy buenas noches') {
             message.reply("Primero la educacion araraara nya ay papi siiiii 💋");
         } else if (command === 'peneseñal') {
-            message.reply("montapuerco griando 'hogrider'");
+            message.channel.send({
+                content: "@everyone PENESEÑAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL",
+                files : ["https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjc1cTdlYnkxYndudXpucTZnbnYwY3piaTI5bTl3ZTN6c3dqOWR5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8YzUAmC06M4A7HaBQg/giphy.gif"]
+            })
         }
     }
 });
